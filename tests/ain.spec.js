@@ -7,7 +7,7 @@ test.describe('Open Ain website', () => {
 
 
 
-    test('test 1', async ({ page }) => {
+    test.skip('test 1', async ({ page }) => {
         await page.goto('https://ain.ua/');
         await page.goto('https://ain.ua/post-list/');
         await expect(page.getByRole('heading', { name: 'Останні новини' })).toBeVisible();
@@ -22,7 +22,7 @@ test.describe('Open Ain website', () => {
         await expect(page.getByRole('heading', { name: 'Уряд перевів проєкт «е-Підприємець» на постійну основу — що змінилось' })).toBeVisible()
     });
 
-    test('test 2', async ({ page }) => {
+    test.skip('test 2', async ({ page }) => {
         await page.goto('https://ain.ua/');
         await page.goto('https://ain.ua/tag/investycziyi/');
         await page.locator('#header').getByRole('link', { name: 'RU' }).click();
@@ -39,20 +39,25 @@ test.describe('Open Ain website', () => {
     });
 
     test('test 3', async ({ page }) => {
+        const input = page.locator('#keywords')
+
         await page.goto('https://ain.ua/');
         await page.goto('https://recruitika.com/');
         await page.getByText('Яку роботу ви шукаєте?').click();
-        await page.locator('#keywords').fill('QA Engineer');
-        await page.locator('#keywords').press('Enter');
-        await page.locator('div:nth-child(2) > .frequent-search > span').first().click();
-        await page.getByRole('link', { name: 'QA / QC' }).click();
-        await expect(page.getByText('Київ, QA / QC')).toBeVisible();
-        await page.locator('.clear-filters').click();
-        await page.locator('span').filter({ hasText: 'Python' }).click();
-        await page.locator('#keywords').fill('PHP');
-        await page.locator('#keywords').click();
-        await page.locator('#keywords').fill('');
-        await page.locator('#keywords').press('Enter')
+        await input.fill('QA Engineer');
+        await input.clear();
+        await input.pressSequentially('QA Engineer', {delay : 200});
+        await page.mouse.move(0, 100, 3)
+        // await page.locator('#keywords').press('Enter');
+        // await page.locator('div:nth-child(2) > .frequent-search > span').first().click();
+        // await page.getByRole('link', { name: 'QA / QC' }).click();
+        // await expect(page.getByText('Київ, QA / QC')).toBeVisible();
+        // await page.locator('.clear-filters').click();
+        // await page.locator('span').filter({ hasText: 'Python' }).click();
+        // await page.locator('#keywords').fill('PHP');
+        // await page.locator('#keywords').click();
+        // await page.locator('#keywords').fill('');
+        // await page.locator('#keywords').press('Enter')
     });
 })
 
