@@ -35,7 +35,7 @@ module.exports = defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'https://www.guru99.com/',
-    baseURL: process.env.ENV_URL,
+    // baseURL: process.env.ENV_URL,
     // baseURL: process.env.URL === '1' ? 'https://www.test.guru99.com/' : 'https://www.guru99.com/',
     locale: 'de-DE',
     timezoneId: 'Europe/Berlin',
