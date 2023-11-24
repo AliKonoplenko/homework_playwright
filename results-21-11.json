@@ -1,0 +1,282 @@
+{
+  "config": {
+    "configFile": "/Users/alinakonoplenko/qa automation/homework_playwright/playwright.config.js",
+    "rootDir": "/Users/alinakonoplenko/qa automation/homework_playwright/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "results-21-11.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/alinakonoplenko/qa automation/homework_playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "log_in",
+        "name": "log_in",
+        "testDir": "/Users/alinakonoplenko/qa automation/homework_playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "login.setup.js"
+        ],
+        "timeout": 15000
+      },
+      {
+        "outputDir": "/Users/alinakonoplenko/qa automation/homework_playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/alinakonoplenko/qa automation/homework_playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 15000
+      },
+      {
+        "outputDir": "/Users/alinakonoplenko/qa automation/homework_playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/alinakonoplenko/qa automation/homework_playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 15000
+      },
+      {
+        "outputDir": "/Users/alinakonoplenko/qa automation/homework_playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/alinakonoplenko/qa automation/homework_playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 15000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.40.0",
+    "workers": 4,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "login.setup.js",
+      "file": "login.setup.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "make login",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 15000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "log_in",
+              "projectName": "log_in",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "failed",
+                  "duration": 7936,
+                  "error": {
+                    "message": "Error: locator.fill: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for getByLabel('Email:')\u001b[22m\n",
+                    "stack": "Error: locator.fill: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for getByLabel('Email:')\u001b[22m\n\n    at /Users/alinakonoplenko/qa automation/homework_playwright/tests/login.setup.js:7:37",
+                    "location": {
+                      "file": "/Users/alinakonoplenko/qa automation/homework_playwright/tests/login.setup.js",
+                      "column": 37,
+                      "line": 7
+                    },
+                    "snippet": "\u001b[0m \u001b[90m  5 |\u001b[39m setup(\u001b[32m'make login'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({page}) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m  6 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/login'\u001b[39m)\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m'Email:'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'email@dmytro.com'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m'Пароль:'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'abc123'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=submit]'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[0m\n\u001b[0m \u001b[90m 10 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/alinakonoplenko/qa automation/homework_playwright/tests/login.setup.js",
+                        "column": 37,
+                        "line": 7
+                      },
+                      "message": "Error: locator.fill: Target page, context or browser has been closed\nCall log:\n  \u001b[2m- waiting for getByLabel('Email:')\u001b[22m\n\n\n\u001b[0m \u001b[90m  5 |\u001b[39m setup(\u001b[32m'make login'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({page}) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m  6 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/login'\u001b[39m)\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m'Email:'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'email@dmytro.com'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m'Пароль:'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'abc123'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button[type=submit]'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[0m\n\u001b[0m \u001b[90m 10 |\u001b[39m\u001b[0m\n\n\u001b[2m    at /Users/alinakonoplenko/qa automation/homework_playwright/tests/login.setup.js:7:37\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2023-11-22T08:59:44.387Z",
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "/Users/alinakonoplenko/qa automation/homework_playwright/tests/login.setup.js",
+                    "column": 37,
+                    "line": 7
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3ef016cc2fd2715a8e9b-3b82666ff45493a4f1ba",
+          "file": "login.setup.js",
+          "line": 5,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "guru.spec.js",
+      "file": "guru.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Open Guru website",
+          "file": "guru.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "test1",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 15000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "5810d20d682f836f02dc-277f560301df8d64d55a",
+              "file": "guru.spec.js",
+              "line": 15,
+              "column": 10
+            },
+            {
+              "title": "test3",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 15000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "5810d20d682f836f02dc-c695de604b7732a24ac9",
+              "file": "guru.spec.js",
+              "line": 21,
+              "column": 10
+            },
+            {
+              "title": "test4",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 15000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "5810d20d682f836f02dc-0bb6456926225c9a925f",
+              "file": "guru.spec.js",
+              "line": 37,
+              "column": 10
+            },
+            {
+              "title": "test5",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 15000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [],
+                  "status": "skipped"
+                }
+              ],
+              "id": "5810d20d682f836f02dc-ab516584fed307ac7492",
+              "file": "guru.spec.js",
+              "line": 50,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2023-11-22T08:59:43.889Z",
+    "duration": 9491.175,
+    "expected": 0,
+    "skipped": 4,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
