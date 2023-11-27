@@ -2,8 +2,6 @@ import path from 'path';
 
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
-// import { defineConfig } from '@playwright/test';
-
 
 export const STORAGE_STATE = path.join(__dirname, 'some_data/auth/user.json')
 
@@ -18,9 +16,9 @@ export const STORAGE_STATE = path.join(__dirname, 'some_data/auth/user.json')
  */
 module.exports = defineConfig({
   testDir: './tests',
-  // testMatch: '*.spec.js',
+  testMatch: '*.spec.js',
   timeout: 15000,
-
+  
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -31,19 +29,20 @@ module.exports = defineConfig({
   workers: process.env.CI ? 4 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html'],
-  ['list'],
-  ['json', { outputFile: 'results-21-11.json' }]],
+            ['list'],
+            ['json', { outputFile: 'results-21-11.json' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    viewport: { width: 1280, height: 720 },
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'https://www.guru99.com/',
+    baseURL: 'https://www.guru99.com',
     // baseURL: process.env.ENV_URL,
-    // baseURL: process.env.URL === '1' ? 'https://www.test.guru99.com/' : 'https://www.guru99.com/',
-    locale: 'en-GB',
-    timezoneId: 'Europe/London',
-    geolocation: { longitude: -0.127758, latitude: 51.507351},
+    // baseURL: process.env.URL === '1' ? 'https://www.test.guru99.com' : 'https://www.guru99.com',
+    locale: 'de-DE',
+    timezoneId: 'Europe/Berlin',
     permissions: ['geolocation'],
-    userAgent: 'blah-blah-blah',
+    geolocation: { longitude: 52.150002, latitude: 10.333333 },
+    userAgent: 'blah-blah',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
@@ -56,18 +55,14 @@ module.exports = defineConfig({
     },
     {
       name: 'logged in',
-      testMatch: 'newborn.setup.js',
+      testMatch: 'newborn.spec.js',
       dependencies: ['log_in'],
-      use: {storageState: STORAGE_STATE,}
+      use: {storageState: STORAGE_STATE, },
     },
     {
       name: 'chromium',
-
-      use: {
-        ...devices['Desktop Chrome'],
-      },
+      use: { ...devices['Desktop Chrome'] },  
     },
-
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
@@ -106,4 +101,3 @@ module.exports = defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-
