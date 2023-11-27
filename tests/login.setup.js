@@ -1,4 +1,3 @@
-// const { test as setup, expect } = require('@playwright/test')
 import {test as setup, expect} from '@playwright/test'
 import { STORAGE_STATE } from '../playwright.config'
 
