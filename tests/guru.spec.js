@@ -12,7 +12,7 @@ test.describe('Open Guru website', () => {
     //     await page.goto('https://www.guru99.com/')
     // })
 
-    test.skip('test1', async ({ page }) => {
+    test('test1', async ({ page }) => {
         // await page.goto('https://www.guru99.com/');
         await page.locator("xpath=//a[@href='/tensorflow-tutorial.html'][text()='➤ TensorFlow']").click()
         await expect(page.locator('//h2[text()="What is TensorFlow?"]')).toBeVisible()
