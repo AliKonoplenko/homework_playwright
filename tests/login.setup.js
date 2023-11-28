@@ -1,4 +1,4 @@
-import {test as setup, expect} from '@playwright/test'
+import { test as setup, expect } from '@playwright/test'
 import { STORAGE_STATE } from '../playwright.config'
 
 setup('make login', async ({page}) => {
