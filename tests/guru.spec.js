@@ -12,13 +12,13 @@ test.describe('Open Guru website', () => {
     //     await page.goto('https://www.guru99.com/')
     // })
 
-    test.skip('test1', async ({ page }) => {
+    test('test1', async ({ page }) => {
         // await page.goto('https://www.guru99.com/');
         await page.locator("xpath=//a[@href='/tensorflow-tutorial.html'][text()='➤ TensorFlow']").click()
         await expect(page.locator('//h2[text()="What is TensorFlow?"]')).toBeVisible()
     })
 
-    test.skip('test3', async ({ page }) => {
+    test('test3', async ({ page }) => {
         const linkNltk = page.locator('a[href="/nltk-tutorial.html"]')
         const articleAdded = page.locator("xpath=//time")
         const textNltkSylabus = page.locator("xpath=//h2[text()='NLTK Tutorial Syllabus]")
@@ -62,5 +62,5 @@ test.describe('Open Guru website', () => {
         await input.pressSequentially('SAP')
         await input.pressSequentially('Tutorial', { delay: 200 })
     })
-    
+
 })
