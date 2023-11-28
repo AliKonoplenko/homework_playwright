@@ -13,4 +13,4 @@ jobs:
     - name: Browsers
       run: npx playwright install chromium --with-deps
     - name: Run playwright tests
-      run: npx playwright test ain.spec.js --project chromium --update-snapshots
+      run: npx playwright test guru.spec.js --project chromium --update-snapshots

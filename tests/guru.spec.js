@@ -62,5 +62,5 @@ test.describe('Open Guru website', () => {
         await input.pressSequentially('SAP')
         await input.pressSequentially('Tutorial', { delay: 200 })
     })
-
+    
 })
