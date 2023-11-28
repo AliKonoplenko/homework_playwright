@@ -18,7 +18,7 @@ test.describe('Open Guru website', () => {
         await expect(page.locator('//h2[text()="What is TensorFlow?"]')).toBeVisible()
     })
 
-    test.skip_('test3', async ({ page }) => {
+    test.skip('test3', async ({ page }) => {
         const linkNltk = page.locator('a[href="/nltk-tutorial.html"]')
         const articleAdded = page.locator("xpath=//time")
         const textNltkSylabus = page.locator("xpath=//h2[text()='NLTK Tutorial Syllabus]")
