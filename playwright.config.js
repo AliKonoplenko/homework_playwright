@@ -36,12 +36,12 @@ module.exports = defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'https://www.guru99.com/',
     // baseURL: process.env.ENV_URL,
-    // baseURL: process.env.URL === '1' ? 'https://www.test.guru99.com/' : 'https://www.guru99.com/',
-    locale: 'de-DE',
-    timezoneId: 'Europe/Berlin',
+    // baseURL: process.env.URL === '1' ? 'https://www.test.guru99.com' : 'https://www.guru99.com',
+    locale: 'en-GB',
+    timezoneId: 'Europe/London',
     permissions: ['geolocation'],
-    geolocation: { longitude: 52.150002, latitude: 10.333333 },
-    userAgent: 'blah-blah-blah',
+    geolocation: { longitude: -0.118092, latitude: 51.509865 },
+    userAgent: 'blah-blah',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
