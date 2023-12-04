@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 3
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "reporter": [
@@ -45,9 +45,22 @@
         "testDir": "/Users/alinakonoplenko/qa automation/homework_playwright/tests",
         "testIgnore": [],
         "testMatch": [
-          "login.setup.js"
+          "**/*.setup.js"
         ],
-        "timeout": 60000
+        "timeout": 40000
+      },
+      {
+        "outputDir": "/Users/alinakonoplenko/qa automation/homework_playwright/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "id": "logged in",
+        "name": "logged in",
+        "testDir": "/Users/alinakonoplenko/qa automation/homework_playwright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "newborn.spec.js"
+        ],
+        "timeout": 40000
       },
       {
         "outputDir": "/Users/alinakonoplenko/qa automation/homework_playwright/test-results",
@@ -58,9 +71,9 @@
         "testDir": "/Users/alinakonoplenko/qa automation/homework_playwright/tests",
         "testIgnore": [],
         "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          "*.spec.js"
         ],
-        "timeout": 60000
+        "timeout": 40000
       },
       {
         "outputDir": "/Users/alinakonoplenko/qa automation/homework_playwright/test-results",
@@ -71,9 +84,9 @@
         "testDir": "/Users/alinakonoplenko/qa automation/homework_playwright/tests",
         "testIgnore": [],
         "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          "*.spec.js"
         ],
-        "timeout": 60000
+        "timeout": 40000
       },
       {
         "outputDir": "/Users/alinakonoplenko/qa automation/homework_playwright/test-results",
@@ -84,9 +97,9 @@
         "testDir": "/Users/alinakonoplenko/qa automation/homework_playwright/tests",
         "testIgnore": [],
         "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+          "*.spec.js"
         ],
-        "timeout": 60000
+        "timeout": 40000
       }
     ],
     "shard": null,
@@ -97,117 +110,693 @@
   },
   "suites": [
     {
-      "title": "location.spec.js",
-      "file": "location.spec.js",
+      "title": "login.setup.js",
+      "file": "login.setup.js",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "location for britain",
+          "title": "make login",
           "ok": true,
           "tags": [],
           "tests": [
             {
-              "timeout": 60000,
+              "timeout": 40000,
               "annotations": [],
               "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
+              "projectId": "log_in",
+              "projectName": "log_in",
               "results": [
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 8586,
+                  "duration": 6492,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2023-11-27T20:18:31.046Z",
+                  "startTime": "2023-12-04T17:21:51.653Z",
                   "attachments": []
                 }
               ],
               "status": "expected"
             }
           ],
-          "id": "34edc5412e2f3d38d405-4eb4a67b9e7774170a1a",
-          "file": "location.spec.js",
-          "line": 5,
-          "column": 1
-        },
+          "id": "3ef016cc2fd2715a8e9b-3b82666ff45493a4f1ba",
+          "file": "login.setup.js",
+          "line": 4,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "newborn.spec.js",
+      "file": "newborn.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
         {
-          "title": "location for britain",
-          "ok": true,
-          "tags": [],
-          "tests": [
+          "title": "Verification steps for newborn website",
+          "file": "newborn.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
             {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "firefox",
-              "projectName": "firefox",
-              "results": [
+              "title": "check the state after open page",
+              "ok": false,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 1,
-                  "status": "passed",
-                  "duration": 11454,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-11-27T20:18:31.028Z",
-                  "attachments": []
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "logged in",
+                  "projectName": "logged in",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: ENOENT: no such file or directory, open '/Users/alinakonoplenko/qa automation/homework_playwright/some_data/auth/user.json'",
+                        "stack": "Error: ENOENT: no such file or directory, open '/Users/alinakonoplenko/qa automation/homework_playwright/some_data/auth/user.json'\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: ENOENT: no such file or directory, open '/Users/alinakonoplenko/qa automation/homework_playwright/some_data/auth/user.json'\n\n\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:22:34.224Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
                 }
               ],
-              "status": "expected"
-            }
-          ],
-          "id": "34edc5412e2f3d38d405-34460b808667619747fe",
-          "file": "location.spec.js",
-          "line": 5,
-          "column": 1
-        },
-        {
-          "title": "location for britain",
-          "ok": true,
-          "tags": [],
-          "tests": [
+              "id": "f48e2b1e9d9dac4d05f8-a02418c673d2ff3d15ad",
+              "file": "newborn.spec.js",
+              "line": 50,
+              "column": 5
+            },
             {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "webkit",
-              "projectName": "webkit",
-              "results": [
+              "title": "usage POM",
+              "ok": true,
+              "tags": [],
+              "tests": [
                 {
-                  "workerIndex": 2,
-                  "status": "passed",
-                  "duration": 9370,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2023-11-27T20:18:31.032Z",
-                  "attachments": []
+                  "timeout": 40000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "logged in",
+                  "projectName": "logged in",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:22:33.792Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
                 }
               ],
-              "status": "expected"
+              "id": "f48e2b1e9d9dac4d05f8-10dc67463d186144c738",
+              "file": "newborn.spec.js",
+              "line": 56,
+              "column": 6
+            },
+            {
+              "title": "without POM",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "logged in",
+                  "projectName": "logged in",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "status": "failed",
+                      "duration": 10,
+                      "error": {
+                        "message": "Error: ENOENT: no such file or directory, open '/Users/alinakonoplenko/qa automation/homework_playwright/some_data/auth/user.json'",
+                        "stack": "Error: ENOENT: no such file or directory, open '/Users/alinakonoplenko/qa automation/homework_playwright/some_data/auth/user.json'\n"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: ENOENT: no such file or directory, open '/Users/alinakonoplenko/qa automation/homework_playwright/some_data/auth/user.json'\n\n\n"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:22:34.225Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-31f0547e70029e0eb8a3",
+              "file": "newborn.spec.js",
+              "line": 61,
+              "column": 5
+            },
+            {
+              "title": "using the request API for category",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "logged in",
+                  "projectName": "logged in",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:22:33.792Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-a8266e5bc40de2ea54ed",
+              "file": "newborn.spec.js",
+              "line": 65,
+              "column": 6
+            },
+            {
+              "title": "check the state after open page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "status": "timedOut",
+                      "duration": 40000,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 40000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/alinakonoplenko/qa automation/homework_playwright/tests/newborn.spec.js",
+                            "column": 66,
+                            "line": 53
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('div.row span.card-title').first()\nExpected string: \u001b[32m\"Виручка:\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toHaveText with timeout 40000ms\u001b[22m\n\u001b[2m  - waiting for locator('div.row span.card-title').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 51 |\u001b[39m     \u001b[90m// await page.goto('/')\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'span.card-title'\u001b[39m)\u001b[33m.\u001b[39mnth(\u001b[35m0\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 53 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'div.row span.card-title'\u001b[39m)\u001b[33m.\u001b[39mnth(\u001b[35m0\u001b[39m))\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'Виручка:'\u001b[39m\u001b[33m,\u001b[39m {timeout\u001b[33m:\u001b[39m \u001b[35m40000\u001b[39m})\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 54 |\u001b[39m })\u001b[0m\n\u001b[0m \u001b[90m 55 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 56 |\u001b[39m test\u001b[33m.\u001b[39mskip(\u001b[32m'usage POM'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\n\u001b[2m    at /Users/alinakonoplenko/qa automation/homework_playwright/tests/newborn.spec.js:53:66\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "AUTH Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsQGRteXRyby5jb20iLCJ1c2VySWQiOiI2NTIyN2U1NzE0NmEyODE5OWI1MzA2MGYiLCJpYXQiOjE3MDE3MTA1MTIsImV4cCI6MTcwMTcxNDExMn0.ohgLqbeQJ56H5SIuMaJFqDGL0OyZl8l1nc2bgtem-iA\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:21:51.656Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-f3265df056bc8c8ec095",
+              "file": "newborn.spec.js",
+              "line": 50,
+              "column": 5
+            },
+            {
+              "title": "usage POM",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:21:51.221Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-b676f7abdab24c5c2831",
+              "file": "newborn.spec.js",
+              "line": 56,
+              "column": 6
+            },
+            {
+              "title": "without POM",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "status": "failed",
+                      "duration": 9747,
+                      "error": {
+                        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('ul > li.bold.last > a')\nExpected string: \u001b[32m\"Вийти\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toContainText with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('ul > li.bold.last > a')\u001b[22m\n",
+                        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('ul > li.bold.last > a')\nExpected string: \u001b[32m\"Вийти\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toContainText with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('ul > li.bold.last > a')\u001b[22m\n\n    at /Users/alinakonoplenko/qa automation/homework_playwright/tests/newborn.spec.js:62:57",
+                        "location": {
+                          "file": "/Users/alinakonoplenko/qa automation/homework_playwright/tests/newborn.spec.js",
+                          "column": 57,
+                          "line": 62
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 60 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 61 |\u001b[39m test(\u001b[32m'without POM'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 62 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'ul > li.bold.last > a'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Вийти'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 63 |\u001b[39m })\u001b[0m\n\u001b[0m \u001b[90m 64 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 65 |\u001b[39m test\u001b[33m.\u001b[39mskip(\u001b[32m'using the request API for category'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/alinakonoplenko/qa automation/homework_playwright/tests/newborn.spec.js",
+                            "column": 57,
+                            "line": 62
+                          },
+                          "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator('ul > li.bold.last > a')\nExpected string: \u001b[32m\"Вийти\"\u001b[39m\nReceived string: \u001b[31m\"\"\u001b[39m\nCall log:\n  \u001b[2m- expect.toContainText with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('ul > li.bold.last > a')\u001b[22m\n\n\n\u001b[0m \u001b[90m 60 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 61 |\u001b[39m test(\u001b[32m'without POM'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 62 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'ul > li.bold.last > a'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Вийти'\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 63 |\u001b[39m })\u001b[0m\n\u001b[0m \u001b[90m 64 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 65 |\u001b[39m test\u001b[33m.\u001b[39mskip(\u001b[32m'using the request API for category'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\n\u001b[2m    at /Users/alinakonoplenko/qa automation/homework_playwright/tests/newborn.spec.js:62:57\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "AUTH Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsQGRteXRyby5jb20iLCJ1c2VySWQiOiI2NTIyN2U1NzE0NmEyODE5OWI1MzA2MGYiLCJpYXQiOjE3MDE3MTA1MTMsImV4cCI6MTcwMTcxNDExM30.YaO_mkSm1khPB_4FEV1w7-eYb3OVcIj6BOMqinZvuKY\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:21:51.666Z",
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/Users/alinakonoplenko/qa automation/homework_playwright/tests/newborn.spec.js",
+                        "column": 57,
+                        "line": 62
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-baca45a3d1ce9536c05d",
+              "file": "newborn.spec.js",
+              "line": 61,
+              "column": 5
+            },
+            {
+              "title": "using the request API for category",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:21:51.223Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-f26beaa6d218b8f00c1d",
+              "file": "newborn.spec.js",
+              "line": 65,
+              "column": 6
+            },
+            {
+              "title": "check the state after open page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "status": "passed",
+                      "duration": 6742,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "AUTH Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsQGRteXRyby5jb20iLCJ1c2VySWQiOiI2NTIyN2U1NzE0NmEyODE5OWI1MzA2MGYiLCJpYXQiOjE3MDE3MTA1MTIsImV4cCI6MTcwMTcxNDExMn0.ohgLqbeQJ56H5SIuMaJFqDGL0OyZl8l1nc2bgtem-iA\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:21:51.679Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-4a3f0a4839d3074e90db",
+              "file": "newborn.spec.js",
+              "line": 50,
+              "column": 5
+            },
+            {
+              "title": "usage POM",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:21:58.491Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-35b293b241c381b519c9",
+              "file": "newborn.spec.js",
+              "line": 56,
+              "column": 6
+            },
+            {
+              "title": "without POM",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "status": "passed",
+                      "duration": 4259,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "AUTH Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsQGRteXRyby5jb20iLCJ1c2VySWQiOiI2NTIyN2U1NzE0NmEyODE5OWI1MzA2MGYiLCJpYXQiOjE3MDE3MTA1MTksImV4cCI6MTcwMTcxNDExOX0.eeBkctB-GpdXtAeAjejpwO-QJDkboh0BuQH5EFucpls\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:21:58.973Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-788c7e0bffdc961548e8",
+              "file": "newborn.spec.js",
+              "line": 61,
+              "column": 5
+            },
+            {
+              "title": "using the request API for category",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:22:00.037Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-42dfee4dea7f9b21ad17",
+              "file": "newborn.spec.js",
+              "line": 65,
+              "column": 6
+            },
+            {
+              "title": "check the state after open page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "status": "passed",
+                      "duration": 4323,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "AUTH Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsQGRteXRyby5jb20iLCJ1c2VySWQiOiI2NTIyN2U1NzE0NmEyODE5OWI1MzA2MGYiLCJpYXQiOjE3MDE3MTA1MjEsImV4cCI6MTcwMTcxNDEyMX0.tFyRRNQ8Rvxn-IwTe0VO9ddkWZzVGS6Ukw2EzoXorqI\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:22:01.029Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-640efc54da0ae4706d1d",
+              "file": "newborn.spec.js",
+              "line": 50,
+              "column": 5
+            },
+            {
+              "title": "usage POM",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:22:03.769Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-0d4fdc6c35c34a6ff0d8",
+              "file": "newborn.spec.js",
+              "line": 56,
+              "column": 6
+            },
+            {
+              "title": "without POM",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "status": "passed",
+                      "duration": 4295,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "AUTH Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsQGRteXRyby5jb20iLCJ1c2VySWQiOiI2NTIyN2U1NzE0NmEyODE5OWI1MzA2MGYiLCJpYXQiOjE3MDE3MTA1MjQsImV4cCI6MTcwMTcxNDEyNH0.pgsnPUUCgZfzyPmdDoMDhTIe3iuNh3JaE2eQCm0o_3w\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:22:04.185Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-c008d37187e3ce77c330",
+              "file": "newborn.spec.js",
+              "line": 61,
+              "column": 5
+            },
+            {
+              "title": "using the request API for category",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 40000,
+                  "annotations": [
+                    {
+                      "type": "skip"
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": -1,
+                      "status": "skipped",
+                      "duration": 0,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2023-12-04T17:22:04.937Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f48e2b1e9d9dac4d05f8-a1a73ec1f00f0b66b68e",
+              "file": "newborn.spec.js",
+              "line": 65,
+              "column": 6
             }
-          ],
-          "id": "34edc5412e2f3d38d405-c4ee2fb49ab223653bc2",
-          "file": "location.spec.js",
-          "line": 5,
-          "column": 1
+          ]
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2023-11-27T20:18:30.310Z",
-    "duration": 15013.338000000002,
-    "expected": 3,
-    "skipped": 0,
-    "unexpected": 0,
+    "startTime": "2023-12-04T17:21:51.191Z",
+    "duration": 43089.316999999995,
+    "expected": 5,
+    "skipped": 8,
+    "unexpected": 4,
     "flaky": 0
   }
 }
