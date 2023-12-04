@@ -17,7 +17,7 @@ export const STORAGE_STATE = path.join(__dirname, 'some_data/auth/user.json')
 module.exports = defineConfig({
   testDir: './tests',
   testMatch: '*.spec.js',
-  timeout: 15000,
+  timeout: 40000,
   
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -35,7 +35,7 @@ module.exports = defineConfig({
   use: {
     viewport: { width: 1280, height: 720 },
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://www.guru99.com',
+    baseURL: 'http://5.189.186.217',
     // baseURL: process.env.ENV_URL,
     // baseURL: process.env.URL === '1' ? 'https://www.test.guru99.com' : 'https://www.guru99.com',
 
