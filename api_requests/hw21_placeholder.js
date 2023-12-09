@@ -1,11 +1,7 @@
 const axios = require('axios')
-const { expect } = require('chai');
 
 describe('Actions for website', async () => {
     let baseURL = 'https://jsonplaceholder.typicode.com'
-    let resourceID;
-    let resourceTitle;
-    let token;
 
     it('Create resource', async () => {
         const createResource = await axios.post(`${baseURL}/posts`,
