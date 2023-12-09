@@ -1,8 +1,6 @@
 name: CI API Tests
 on:
-  pull_request:
-    types:
-      - opened
+  push:
     branches:
       - "lesson30_api_automation"
 jobs:
