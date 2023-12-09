@@ -1,6 +1,6 @@
 name: CI API Tests
 on:
-  push:
+  pull_request:
     branches: ['lesson30_api_automation']
 jobs:
   tests: 
