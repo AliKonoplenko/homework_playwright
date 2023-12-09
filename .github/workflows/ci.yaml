@@ -1,10 +1,10 @@
 name: CI API Tests
 on:
   pull_request:
-    types: 
-    - opened
-    branches: 
-    - "lesson30_api_automation"
+    types:
+      - opened
+    branches:
+      - "lesson30_api_automation"
 jobs:
   tests:
     runs-on: ubuntu-latest
