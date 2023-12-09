@@ -2,16 +2,18 @@
 const axios = require('axios')
 const { expect } = require('chai');
 const data = require('./data/dummy_data.json')
-const fs = require('fs-extra')
+const fs = require('fs-extra');
+const { URLSearchParams } = require('url');
 
 
-describe('Actions for dummy website', async () => {
+describe('Actions for users on dummy website', async () => {
     let userId;
     let userName;
+    let userLName;
     let userPwd;
     let token;
 
-    it('Create user', async () => {
+    it.skip('Create user', async () => {
         const createUser = await axios.post(`${data.baseUrl}/users/add`,
             {
                 'firstName': 'Oli',
@@ -24,7 +26,7 @@ describe('Actions for dummy website', async () => {
                 }
             })
         console.log(createUser.data)
-        userId = createUser.data.id
+        // userId = createUser.data.id
     })
 
     it('create product', async () => {
@@ -42,19 +44,41 @@ describe('Actions for dummy website', async () => {
         expect(createProduct.status).equal(200)
     })
 
-    // updating user with id 101
+    it('get user by search params', async () => {
+        const params = new URLSearchParams([['key', 'hair.color'], ['value', 'Brown']])
+        const getUserByParams = await axios.get(`${data.baseUrl}/users/filter`, { params })
+        expect(getUserByParams.status).equal(200)
+        // console.log(getUserByParams.data)
+        userName = getUserByParams.data.users[2].firstName
+        userId = getUserByParams.data.users[2].id
+        userLName = getUserByParams.data.users[2].lastName
+        console.log(userName)
+        console.log(userId)
+    })
+
+    it('get user by id and compare values', async () => {
+        userId = Number(userId)
+        const getUser = await axios.get(`${data.baseUrl}/users/${userId}`)
+        // console.log(getUser.data)
+        expect(userName).equal(getUser.data.firstName)
+        expect(userLName).equal(getUser.data.lastName)
+
+    })
+
     it.skip('update user data', async () => {
-        const updateUserData = await axios.patch(`${data.baseUrl}/users/101`,
+        const updateUserData = await axios.patch(`${data.baseUrl}/users/${userId}`,
             {
-                'maidenName': 'nameMaiden',
-                'age': 400,
+                'firstName': 'Marko',
+                'lastName': 'Polo',
             },
             {
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+
                 }
             })
-        // console.log(updateUserData.data)
+        console.log(updateUserData.data)
         console.log(updateUserData.statusText)
+        console.log(updateUserData.status)
     })
 })
