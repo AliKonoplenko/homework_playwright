@@ -1,6 +1,7 @@
 name: CI API Tests
 on:
   pull_request_target:
+    types: [opened]
     branches: ["lesson30_api_automation"]
 jobs:
   tests:
