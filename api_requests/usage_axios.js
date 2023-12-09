@@ -1,17 +1,18 @@
 // import axios from 'axios'
 const axios = require('axios')
-const {expect} = require('chai');
-const { create } = require('domain');
+const { expect } = require('chai');
+const data = require('./data/dummy_data.json')
+const fs = require('fs-extra')
+
 
 describe('Actions for dummy website', async () => {
-    let baseURL = 'https://dummyjson.com'
     let userId;
     let userName;
     let userPwd;
     let token;
 
-    it.skip('Create user', async () => {
-        const createUser = await axios.post('https://dummyjson.com/users/add',
+    it('Create user', async () => {
+        const createUser = await axios.post(`${data.baseUrl}/users/add`,
             {
                 'firstName': 'Oli',
                 'lastName': 'Ali',
@@ -26,47 +27,24 @@ describe('Actions for dummy website', async () => {
         userId = createUser.data.id
     })
 
-    it('get user by id', async () => {
-        const getUser = await axios.get('https://dummyjson.com/users/1')
-        console.log(getUser.data)
-        userName = getUser.data.username
-        userPwd = getUser.data.password
-    })
-
-    it('getting credentials', async () => {
-        const getTokenData = await axios.post(`${baseURL}/auth/login`,
-            {
-                'username': userName,
-                'password': userPwd,
-                expiresInMins: 60
-            },
-            {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-        // console.log(getTokenData.data)
-        token = getTokenData.token
-    })
-
     it('create product', async () => {
-        const createProduct = await axios.post(`${baseURL}/products/add`,
+        const createProduct = await axios.post(`${data.baseUrl}/products/add`,
             {
                 'title': 'MyProduct'
             },
             {
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
+                    'Authorization': `Bearer ${data.token}`
                 }
             })
-            console.log(createProduct.data)
-            expect(createProduct.status).equal(200)
+        console.log(createProduct.data)
+        expect(createProduct.status).equal(200)
     })
 
     // updating user with id 101
     it.skip('update user data', async () => {
-        const updateUserData = await axios.patch('https://dummyjson.com/users/101',
+        const updateUserData = await axios.patch(`${data.baseUrl}/users/101`,
             {
                 'maidenName': 'nameMaiden',
                 'age': 400,
