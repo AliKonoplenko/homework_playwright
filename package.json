@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "api_tests": "npx mocha api_requests/login.js && npx mocha api_requests/usage_axios.js --reporter mochawesome --reporter-options reportDir=html_reports,reportFilename=report.html"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -12,6 +14,8 @@
     "@types/node": "^20.9.2",
     "axios": "^1.6.2",
     "chai": "^4.3.10",
-    "mocha": "^10.2.0"
+    "fs-extra": "^11.2.0",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3"
   }
 }
