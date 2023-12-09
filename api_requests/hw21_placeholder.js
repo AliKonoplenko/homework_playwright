@@ -36,6 +36,5 @@ describe('Actions for website', async () => {
                 }
             })
         console.log(updateResource.data)
-        // token = getTokenData.token
     })
 })
