@@ -62,7 +62,6 @@ describe('Actions for users on dummy website', async () => {
         // console.log(getUser.data)
         expect(userName).equal(getUser.data.firstName)
         expect(userLName).equal(getUser.data.lastName)
-
     })
 
     it.skip('update user data', async () => {
@@ -74,7 +73,6 @@ describe('Actions for users on dummy website', async () => {
             {
                 headers: {
                     'Content-Type': 'application/json',
-
                 }
             })
         console.log(updateUserData.data)
