@@ -26,7 +26,7 @@ describe('Actions for users on dummy website', async () => {
                 }
             })
         console.log(createUser.data)
-        // userId = createUser.data.id
+        
     })
 
     it('create product', async () => {
