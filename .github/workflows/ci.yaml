@@ -1,8 +1,8 @@
 name: CI API Tests
 on:
    pull_request:
-    # branches:
-      # - "lesson30_api_automation"
+    branches:
+      - "lesson30_api_automation"
     types: [opened, reopened, synchronize, closed]
 jobs:
   tests:
