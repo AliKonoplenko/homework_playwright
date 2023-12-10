@@ -4,7 +4,7 @@ on:
     branches:
     # - main
     - lesson30_api_automation
-    types: [opened, reopened, synchronize, closed]
+    # types: [opened, reopened, synchronize, closed]
 jobs:
   tests:
     runs-on: ubuntu-latest
