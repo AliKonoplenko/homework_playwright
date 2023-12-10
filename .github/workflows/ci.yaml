@@ -3,6 +3,7 @@ on:
    pull_request:
     branches:
     - API_tests
+    types: [opened, reopened, synchronize, closed]
 jobs:
   tests:
     runs-on: ubuntu-latest
