@@ -26,7 +26,6 @@ describe('Actions for users on dummy website', async () => {
                 }
             })
         console.log(createUser.data)
-        
     })
 
     it('create product', async () => {

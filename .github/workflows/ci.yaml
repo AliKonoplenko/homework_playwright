@@ -1,7 +1,9 @@
-name: CI API Tests
+name: CI API Tests  
 on:
-  pull_request_review:
-    branches: ["lesson30_api_automation"]
+   pull_request:
+    branches:
+    - API_tests
+    # types: [opened, reopened, synchronize, closed]
 jobs:
   tests:
     runs-on: ubuntu-latest
