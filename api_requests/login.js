@@ -4,7 +4,6 @@ const data = require('./data/dummy_data.json')
 const fs = require('fs-extra')
 
 describe('login & getting token', () => {
-
     it('get user by id', async () => {
         const getUser = await axios.get(`${data.baseUrl}/users/1`)
         console.log(getUser.data)
